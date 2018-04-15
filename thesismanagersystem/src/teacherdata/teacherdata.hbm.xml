@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="teacherdata.teacherdata" table="teacher">
+	<id name="salaryid" column="salaryid" length="255">
+	<generator class="assigned"></generator>
+	
+	
+	</id>
+<property name="teachername" type="java.lang.String" length="5"></property>
+	<property name="teacherpassword" type="java.lang.String" length="20"></property>
+	<property name="teacherqq" type="java.lang.String" length="20"></property>
+	<property name="teachertel" type="java.lang.String" length="20"></property>
+	<property name="teacheremail" type="java.lang.String" length="50"></property>
+	<property name="teachertitle" type="java.lang.String" length="20"></property>
+	<property name="isadministrator" type="java.lang.String" length="5"></property>
+	<property name="major" type="java.lang.String" length="20"></property>
+	
+
+
+
+
+</class>
+
+
+
+</hibernate-mapping>

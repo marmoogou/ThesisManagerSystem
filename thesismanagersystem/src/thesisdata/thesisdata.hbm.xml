@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="thesisdata.thesisdata" table="thesistitle">
+	<id name="thesisid" column="thesisid" length="11">
+	<generator class="increment"></generator>
+	
+	
+	</id>
+	<property name="thesistitle" type="java.lang.String" length="255"></property>
+	<property name="thesisbrief" type="java.lang.String" ></property>
+	<property name="thesisteacher" type="java.lang.String" length="5"></property>
+	<property name="publicdate" type="java.sql.Date" ></property>
+	<property name="ischosed" type="java.lang.String" length="3"></property>
+	<property name="salaryid" type="java.lang.String" length="255"></property>
+	<property name="major" type="java.lang.String" length="20"></property>
+	
+
+
+
+
+</class>
+
+
+
+</hibernate-mapping>

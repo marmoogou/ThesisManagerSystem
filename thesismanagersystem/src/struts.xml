@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/*
+ * $Id: struts-plugin.xml 722219 2008-12-01 20:41:26Z musachy $
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+-->
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+
+<struts>
+    <!--  Overwrite Convention -->
+    <constant name="struts.custom.il8n.resourse" value="mess"></constant>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.devMode" value="true"></constant>
+    <package name="struts2demo" namespace="/" extends="struts-default">
+      	<action name="*">
+      	<result>/index.jsp</result>	
+      	</action>
+    	<action name="login" class="login.login">
+    	<result name="teacher" type="redirect">teacherpage.action</result>
+    	<result name="student" type="redirect">studentpage.action</result>
+    	<result name="error">/index.jsp</result>
+    	<result name="administrator" type="redirect">administratorpage.action</result>
+    	</action>
+    	<action name="getchecker" class="login.getchecker"></action>
+    	
+    	<action name="studentpage" class="studentfunction.studentpagefunction">
+    	<result name="error">/error.html</result>
+    	<result name="success">/WEB-INF/content/student.jsp</result>
+    	<result name="fof">/index.jsp</result>
+    	</action>
+    	<action name="thesispage" class="thesisfunction.thesispagefunction">
+    	<result name="success">/WEB-INF/content/thesispage.jsp</result>
+    	<result name="teacherpage">/WEB-INF/content/teacherthesispage.jsp</result>
+    	<result name="error" type="redirect">studentpage.action?abc</result>
+    	<result name="fof">/index.jsp</result>
+    	</action>
+    	<action name="teacherpage" class="teacherfunction.teacherpagefunction">
+    		<result name="success">/WEB-INF/content/teacher.jsp?abc</result>
+    		<result name="fof">/index.jsp</result>
+    		<result name="checkin">/WEB-INF/content/checkin.jsp</result>
+    		<result name="checkok" type="redirect" >teacherpage.action?abc</result>
+    		<result name="rewrite">/WEB-INF/content/rewrite.jsp</result>
+    		<result name="showinfo">/WEB-INF/content/showstudent.jsp</result>
+    		<result name="isad" type="redirect" >teacheradpage.action?abc</result>
+    		
+    	</action>
+    	<action name="administratorpage" class="administrorfunction.administrorfunction">
+    	<result name="fof">/index.jsp</result>
+    	<result name="success">/WEB-INF/content/administatorpage.jsp</result>
+    	<result name="createstudent">/WEB-INF/content/createstudent.jsp</result>
+    	<result name="createteacher">/WEB-INF/content/createteacher.jsp</result>
+    	<result name="complete" type="redirect" >administratorpage.action?abc</result>
+    	<result name="sendtoallteacher" >/WEB-INF/content/email.jsp</result>
+    	<result name="sendtoallstudent">/WEB-INF/content/emailstu.jsp</result>
+    	</action>
+    	<action name="studentpersonpage" class="studentperson.studentperson">
+    		<result name="success">/WEB-INF/content/studentperson.jsp</result>    		
+    		<result name="complete" type="redirect" >studentpage.action?abc</result>
+    	</action>
+    	<action name="teacherpersonpage" class="teacherperson.teacherperson">
+    		<result name="success">/WEB-INF/content/teacherperson.jsp</result>    		
+    		<result name="complete" type="redirect" >teacherpage.action?abc</result>
+    	</action>
+    	<action name="ateacherpersonpage" class="ateacherperson.ateacherperson">
+    		<result name="success">/WEB-INF/content/ateacherperson.jsp</result>    		
+    		<result name="complete" type="redirect" >administratorpage.action?abc</result>
+    	</action>
+    	<action name="astudentpersonpage" class="astudentperson.astudentperson">
+    		<result name="success">/WEB-INF/content/astudentpersonpage.jsp</result>    		
+    		<result name="complete" type="redirect" >administratorpage.action?abc</result>
+    	</action>    	
+    	<action name="teacheradpage" class="administratorteacher.administratorteacher">
+    		<result name="success">/WEB-INF/content/administratorteacher.jsp</result>
+    		<result name="sendtoallteacher">/WEB-INF/content/emailforteaad.jsp</result>
+    		<result name="sendtoallstudent">emailstuteaad.jsp</result>
+    		<result name="complete" type="redirect" >teacheradpage.action?abc</result>
+    		<result name="fof">/index.jsp</result>
+    	</action>
+    	<action name="uploadteacherinfo" class="administrorfunction.uploadteacheraction" method="upload">
+    		<result type="redirect">administratorpage.action?abc</result>
+    	
+    	</action>
+    	<action name="uploadstudentinfo" class="administrorfunction.uploadstudent" method="upload">
+    		<result type="redirect">administratorpage.action?abcd</result>
+    	
+    	</action>
+    	<action name="uploadthesisinfo" class="administrorfunction.uploadthesisaction" method="upload">
+    		<result type="redirect">administratorpage.action?abc</result>
+    	
+    	</action>
+    </package>
+</struts>

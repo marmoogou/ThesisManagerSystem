@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="optthesisdata.optthesisdata" table="optthesis">
+	<id name="thesisid" column="thesisid"  length="11">
+	<generator class="assigned"></generator>
+	
+	
+	</id>
+	<property name="studentid" type="java.lang.String" length="20"></property>
+	<property name="thesistopic" type="java.lang.String" length="255"></property>
+	<property name="thesisteacher" type="java.lang.String" length="5"></property>
+	<property name="chosedtime" type="java.sql.Date" ></property>
+	<property name="ischecked" type="java.lang.String" length="3"></property>
+
+	
+	
+
+
+
+
+</class>
+
+
+
+</hibernate-mapping>

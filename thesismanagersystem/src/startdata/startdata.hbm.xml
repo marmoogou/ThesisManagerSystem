@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="startdata.startdata" table="start">
+	<id name="id" column="id" length="11">
+	<generator class="increment"></generator>
+	
+	
+	</id>
+	<property name="start" type="java.lang.String" length="3"></property>
+	
+	
+
+
+
+
+</class>
+
+
+
+</hibernate-mapping>
